@@ -1,0 +1,28 @@
+{
+  "name": "webpack_study",
+  "version": "1.0.0",
+  "description": "从自己开始工作接触webpack，至今也不敢说熟练使用，究其原因自己貌似重来都没有去看过webpack的官网。对于它的了解全是来自vue的webpack配置文件，除此之外的知识知之甚少，于是决定重头开始，将官网认真看一篇，跟着官网写一些案例并记录下来",
+  "private": true,
+  "scripts": {
+    "build": "webpack --config ./start/src/webpack_config/auxiliaryComment.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smallmonsters/webpack_study.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smallmonsters/webpack_study/issues"
+  },
+  "homepage": "https://github.com/smallmonsters/webpack_study#readme",
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}

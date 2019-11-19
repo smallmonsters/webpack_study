@@ -56,9 +56,15 @@ module.exports = {
   return element;
 }
 ```
-上面是一个异步加载，点击button才会去加载async.js。当我们没有配置chunkFilename打包
+上面是一个异步加载，点击button才会去加载async.js。当我们没有配置chunkFilename
 
-network
+打包
+
+![image](https://github.com/smallmonsters/webpack_study/blob/master/img/start/1.png)
+
+点击按钮 network
+
+![image](https://github.com/smallmonsters/webpack_study/blob/master/img/start/2.png)
 
 修改webpack配置
 ```JavaScript
@@ -73,10 +79,18 @@ module.exports = {
   }
 };
 ```
-chunkFilename打包
+
+打包
+
+![image](https://github.com/smallmonsters/webpack_study/blob/master/img/start/3.png)
+
 >注意写了/* webpackChunkName: "async" */是指定打包出来的异步文件的名称
 
-network
+点击按钮 network
+
+![image](https://github.com/smallmonsters/webpack_study/blob/master/img/start/4.png)
+
+完整[demo](https://github.com/smallmonsters/webpack_study/tree/master/start/src/output_chuckName)
 
 
 <!-- 
@@ -85,4 +99,5 @@ output.auxiliaryComment、output.library、output.libraryExport、output.library
 
 ### 参考
 webpack起步：https://webpack.docschina.org/guides/getting-started/
+
 入口和上下文：https://webpack.docschina.org/configuration/entry-context/

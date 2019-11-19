@@ -98,6 +98,9 @@ output.auxiliaryComment、output.library、output.libraryExport、output.library
 
 
 ### 参考
+
 webpack起步：https://webpack.docschina.org/guides/getting-started/
 
 入口和上下文：https://webpack.docschina.org/configuration/entry-context/
+
+懒加载：https://webpack.docschina.org/guides/lazy-loading/

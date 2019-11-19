@@ -3,5 +3,5 @@
 
 ### 足迹
 
-- [entry和output]()
+- [entry和output](https://github.com/smallmonsters/webpack_study/blob/master/start/note.md)
 - [一些笔记](https://github.com/smallmonsters/webpack_study/issues/1)

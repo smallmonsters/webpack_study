@@ -84,7 +84,7 @@ module.exports = {
 
 ![image](https://github.com/smallmonsters/webpack_study/blob/master/img/start/3.png)
 
->注意写了/* webpackChunkName: "async" */是指定打包出来的异步文件的名称
+>注意写了/* webpackChunkName: "async" */是指定打包出来的异步文件的名称,只有指定值chunkFilename才生效
 
 点击按钮 network
 
@@ -92,6 +92,7 @@ module.exports = {
 
 完整[demo](https://github.com/smallmonsters/webpack_study/tree/master/start/src/output_chuckName)
 
+- 
 
 <!-- 
 output.auxiliaryComment、output.library、output.libraryExport、output.libraryTarget 、output.jsonpFunction  -->

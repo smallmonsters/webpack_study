@@ -1,0 +1,5 @@
+@import url('./style1.css');
+.hello {
+  color: #039410;
+  background: url("../../../../img/start/1.png");
+}

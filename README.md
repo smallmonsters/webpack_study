@@ -4,4 +4,7 @@
 ### 目录
 
 - [entry和output](https://github.com/smallmonsters/webpack_study/blob/master/start/note.md)
+- [解析css](https://github.com/smallmonsters/webpack_study/blob/master/Management/README.md)
+
+### 问题
 - [webpack编译时路径问题](https://github.com/smallmonsters/webpack_study/issues/1)

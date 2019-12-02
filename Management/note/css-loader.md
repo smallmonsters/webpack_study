@@ -19,25 +19,10 @@ import("./css/style.css")
 
 ```
 - Option
-  * url:是否处理图片路径。在css中url引入的图片打包后，路径是否改变
+  * url:是否处理图片路径。
+  在style.css引入1.png当背景，当我们打包后目录结构变为dist，使用背景图片的路径是css-loader的处理过的能正常显示。当url为false，css-loader将不会处理图片路径。
     - true(默认)
-    ```
-    //style.css
-    .hello {
-      color: #039410;
-      background: url("../../../../img/start/1.png");
-    }
-    ```
-    >打包后删除start/1.png,页面依然有背景；删除dist/1.png页面找不到图片了
-     - false
-    ```
-    //style.css
-    .hello {
-      color: #039410;
-      background: url("../../../../img/start/1.png");
-    }
-    ```
-    >打包后删除start/1.png,页面找不到图片了
+    - false
     - function
     自定义是否处理某些文件
     ```JavaScript
@@ -50,21 +35,12 @@ import("./css/style.css")
         return true;
       },
     ```
-  * import：暂时不知道什么意思
-    ```css
-    //style.css
-    @import './style1.css'
-    .hello {
-      color: #039410;
-      background: url("../../../../img/start/1.png");
-    }
-    //index.js
-    import css from "./css/style.css"
-    console.log(css)
-    ```
+  * import：是否处理@import引入的文件支援
+  与url同理，只是将url换成了@import(path)
     - true(默认)
     - false
     - function
+    自定义是否处理某些文件
     ```JavaScript
     import: (parsedImport, resourcePath) => {
       // parsedImport.url - url of `@import`
@@ -77,3 +53,46 @@ import("./css/style.css")
       return true;
     },
     ```
+  * modules：Boolean|String|Object ([css Modules](https://github.com/smallmonsters/Blog/blob/master/201911/19.md)相关知识)
+    - false（默认）
+    关闭css Modules功能
+    - true
+    开启css Modules功能
+    - global
+    声明的class默认为global的
+    - Object
+      - mode 
+        * local(默认) 
+        声明的class默认为local的
+        * global 
+        声明的class默认为global的
+      - localIdentName
+      配置生成的ident
+      ```JavaScript
+      {
+        test: /\.css$/i,
+        loader: 'css-loader',
+        options: {
+          modules: {
+            localIdentName: '[path][name]__[local]--[hash:base64:5]',
+          },
+        },
+      },
+      ```
+      
+      - context
+      允许重新定义本地标识名称的基本加载程序上下文,貌似修改了值，上面的[path]就变了
+      ```JavaScript
+      {
+        test: /\.css$/i,
+        loader: 'css-loader',
+        options: {
+          modules: {
+            context: path.resolve(__dirname, 'context'),
+          },
+        },
+      },
+      ```
+
+
+

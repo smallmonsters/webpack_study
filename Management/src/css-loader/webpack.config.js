@@ -1,8 +1,8 @@
 const path = require('path');
-const HtmlWebpackPlugin=require("html-webpack-plugin")
 
 module.exports = {
-  entry: './index.js',
+  // entry: './index.js',
+  entry: './modules.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -29,27 +29,31 @@ module.exports = {
       //   }],
       // },
       /* import:false */
+      // {
+      //   test: /\.css$/i,
+      //   use: ["style-loader",{
+      //     loader: 'css-loader',
+      //     options: {
+      //       import:true,
+      //       url:false,
+      //     }
+      //   }],
+      // },
+      /* modules */
       {
         test: /\.css$/i,
         use: ["style-loader",{
           loader: 'css-loader',
           options: {
-            import:true,
+            modules: {
+              // mode: 'global',
+              hashPrefix: 'hash',
+              localIdentName: '[path]',
+              context: path.resolve(__dirname, '../../../start/src/output_chuckName/src'),
+            },
           }
         }],
       },
-      /* modules:true */
-      // {
-      //   test: /\.css$/i,
-      //   // loader: "style-loader!css-loader" //初始
-      //   // use:["style-loader","css-loader"],
-      //   use: ["style-loader",{
-      //     loader: 'css-loader',
-      //     options: {
-      //       modules:true,
-      //     }
-      //   }],
-      // },
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
@@ -66,17 +70,4 @@ module.exports = {
       }
     ]
   },
-  plugins:[
-    new HtmlWebpackPlugin({
-      title: '标题标题',
-      template: './index.html', // 源模板文件
-      filename: './index.html', // 输出文件【注意：这里的根路径是module.exports.output.path】
-      inject: true,
-      minify: {
-          removeComments: true,
-          collapseWhitespace: true
-      },
-      chunks: ["main"]
-  })
-  ]
 };
